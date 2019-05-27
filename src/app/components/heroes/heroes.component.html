@@ -1,0 +1,19 @@
+<h1> Héroes <small>Marbel y DC</small></h1>
+<hr>
+
+<div class="card-columns">
+
+  <div class="card animated fadeIn fast" *ngFor="let unHeroe of heroes; let i=index">
+    <img class="card-img-top img-fluid" [src]="unHeroe.img" [alt]="unHeroe.nombre">
+    <div class="card-body">
+      <h5 class="card-title">{{ unHeroe.nombre }}</h5>
+      <p class="card-text">{{ unHeroe.bio }}</p>
+      <p class="card-text"><small class="text-muted">{{ unHeroe.aparicion}}</small></p>
+
+      <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
+        Ver más...
+      </button>
+    </div>
+  </div>
+
+</div>

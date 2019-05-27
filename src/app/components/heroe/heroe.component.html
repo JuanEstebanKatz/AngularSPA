@@ -1,0 +1,32 @@
+<h1 class="text-center text-info">
+  Nombre del Héroe: {{heroe.nombre | uppercase}}
+</h1>
+<h2 class="text-center"><small>fecha de aparición: {{ heroe.aparicion | date:'y'}}</small></h2>
+<hr>
+<div class="row">
+  <div class="col-md-4 animated fadeIn">
+    <img class="img-fluid img-thumbnail" src={{heroe.img}} alt="{{heroe.nombre}}">
+    <br>
+    <br>
+    <!-- esta es una forma de hacerlo, utilizando el llamado a una funcion, la otra manera es haciendo hacia un link
+      <button (click)="regresar()" class="btn btn-outline-danger btn-block"> Regresar </button> 
+    -->
+    <a [routerLink]="['/heroes']" class=" btn btn-outline-danger btn-block ">Regresar</a>
+  </div>
+
+  <div class="col-md-8 animated fadeIn">
+    <h3>{{heroe.nombre}}</h3>
+    <hr>
+    <p>
+      {{heroe.bio}}
+    </p>
+    <p> <strong class="text-success">Casa:</strong></p>
+    <img *ngIf="heroe.casa=='DC'" class="img-logo" src="assets/img/DcLogo.jpg" alt="DC">
+    <img *ngIf="heroe.casa=='Marvel'" class="img-logo" src="assets/img/MarvelLogo.png" alt="Marvel">
+
+    <p *ngIf {{heroe.casa="Marvel"}}> Marvel</p>
+    <p *ngIf {{heroe.casa="DC"}}>DC</p>
+    <img>
+  </div>
+
+</div>
