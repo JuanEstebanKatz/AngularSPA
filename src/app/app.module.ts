@@ -15,6 +15,7 @@ import { APP_ROUTING } from './app.routes';
 import { HeroesService } from './servicios/heroes.service';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BusadorComponent } from './components/busador/busador.component';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { BusadorComponent } from './components/busador/busador.component';
     HeroesComponent,
     AboutComponent,
     HeroeComponent,
-    BusadorComponent
+    BusadorComponent,
+    HeroeTarjetaComponent
   ],
   imports: [
     BrowserModule,

@@ -4,12 +4,11 @@ import { HeroesService } from '../../servicios/heroes.service';
 
 @Component({
   selector: 'app-busador',
-  templateUrl: './busador.component.html',
-  styles: []
+  templateUrl: './busador.component.html'
 })
 export class BusadorComponent implements OnInit {
 
-  heroe:any[]=[];
+  heroes:any[]=[];
   termino : string ;
 
   constructor( private activatedRoute: ActivatedRoute,
@@ -20,11 +19,9 @@ export class BusadorComponent implements OnInit {
     this.activatedRoute.params.subscribe( params =>{
       //  console.log(params['termino'])
       this.termino=params['termino'];
-      this.heroe = this.heroService.buscarHeroes(params['termino'])
-      console.log(this.heroe)
+      this.heroes = this.heroService.buscarHeroes(params['termino'])
+      console.log(this.heroes)
     });
-
-
   }
 
 }

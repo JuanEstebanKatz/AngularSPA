@@ -1,9 +1,9 @@
 <h1> Héroes <small>Marbel y DC</small></h1>
 <hr>
 
-<div class="card-columns">
-
-  <div class="card animated fadeIn fast" *ngFor="let unHeroe of heroes; let i=index">
+<!-- Vamos a realizar cambios para utilizar el @ Input como nueva mejora de la aplicacion.....
+ <div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let unHeroe of heroes; let i=index"> 
     <img class="card-img-top img-fluid" [src]="unHeroe.img" [alt]="unHeroe.nombre">
     <div class="card-body">
       <h5 class="card-title">{{ unHeroe.nombre }}</h5>
@@ -14,6 +14,10 @@
         Ver más...
       </button>
     </div>
+  </div> -->
+  <!--Este sera el componente padre-->
+  <!--El signo dollar obliga a escuchar un evento-->
+  <div class="card-columns">
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event)" [heroe]="unHeroe" [index]="i" *ngFor="let unHeroe of heroes; let i=index"></app-heroe-tarjeta>
   </div>
-
-</div>
+  
