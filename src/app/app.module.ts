@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// para formularios
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+
 
 //modulos
 import { AppComponent } from './app.component';
@@ -16,6 +20,7 @@ import { HeroesService } from './servicios/heroes.service';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BusadorComponent } from './components/busador/busador.component';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { DataComponent } from './components/data/data.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +30,14 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
     AboutComponent,
     HeroeComponent,
     BusadorComponent,
-    HeroeTarjetaComponent
+    HeroeTarjetaComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     HeroesService
